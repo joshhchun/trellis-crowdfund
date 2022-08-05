@@ -138,10 +138,10 @@ export default function NavBar() {
                   fontSize={"md"}
                   fontWeight={600}
                   color={"white"}
-                  bg={"#3F7B5E"}
+                  bg={colors.darkGreen}
                   href={"#"}
                   _hover={{
-                    bg: "#9CD49A",
+                    bg: colors.mossGreen,
                   }}
                   onClick={() => wallet.connect()}
                 >
