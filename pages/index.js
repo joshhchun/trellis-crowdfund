@@ -24,6 +24,7 @@ import {
   HStack,
   Stack,
   Progress,
+  ColorModeScript,
 } from "@chakra-ui/react";
 
 import factory from "../smart-contract/factory";
@@ -32,6 +33,14 @@ import Campaign from "../smart-contract/campaign";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { FaHandshake } from "react-icons/fa";
 import { FcShare, FcDonate, FcMoneyTransfer } from "react-icons/fc";
+
+const colors = {
+  darkGreen: "#3F8B5E",
+  mossGreen: "#9CD49A",
+  blue: "#4878A7",
+  lightBlue: "#6b94be",
+}
+
 
 export async function getServerSideProps(context) {
   const campaigns = await factory.methods.getDeployedCampaigns().call();
@@ -231,7 +240,11 @@ export default function Home({ campaigns }) {
           name="description"
           content="Transparent Crowdfunding in Blockchain"
         />
-        <link rel="icon" href="/logo.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
       </Head>
       <main className={styles.main}>
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
@@ -243,7 +256,8 @@ export default function Home({ campaigns }) {
             as="h1"
             py={4}
           >
-            Crowdfunding using the powers of <br /> Crypto & Blockchain 😄{" "}
+            Invest in Shares of <br /> Vertical Farms On-Chain
+            {" "}
           </Heading>
           <NextLink href="/campaign/new">
             <Button
@@ -251,9 +265,9 @@ export default function Home({ campaigns }) {
               fontSize={"md"}
               fontWeight={600}
               color={"white"}
-              bg={"teal.400"}
+              bg={colors.darkGreen}
               _hover={{
-                bg: "teal.300",
+                bg: colors.mossGreen,
               }}
             >
               Create Campaign
@@ -331,7 +345,7 @@ export default function Home({ campaigns }) {
           <Heading as="h2" size="lg" mt="8">
             For any queries raise an issue on{" "}
             <Link
-              color="teal.500"
+              color={colors.darkGreen}
               href="https://github.com/harsh242/betterfund-crowdfunding-in-blockchain/issues"
               isExternal
             >

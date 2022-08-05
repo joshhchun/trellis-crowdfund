@@ -2,7 +2,7 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
+  Icon,
   Button,
   Stack,
   useColorModeValue,
@@ -15,10 +15,17 @@ import {
   MenuItem,
 } from "@chakra-ui/react";
 import { useWallet } from "use-wallet";
+// import { ReactComponent as MySvg } from "../public/logo.svg";
 
 import NextLink from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+
+const colors = {
+  darkGreen: "#3F8B5E",
+  mossGreen: "#9CD49A",
+  blue: "#4878A7",
+  lightBlue: "#6b94be",
+}
 
 export default function NavBar() {
   const wallet = useWallet();
@@ -56,25 +63,36 @@ export default function NavBar() {
               color={useColorModeValue("teal.800", "white")}
               as="h2"
               size="lg"
+              w="full"
             >
-              <Box
-                as={"span"}
-                color={useColorModeValue("teal.400", "teal.300")}
-                position={"relative"}
-                zIndex={10}
-                _after={{
-                  content: '""',
-                  position: "absolute",
-                  left: 0,
-                  bottom: 0,
-                  w: "full",
-                  h: "30%",
-                  bg: useColorModeValue("green.100", "green.900"),
-                  zIndex: -1,
-                }}
-              >
-                <NextLink href="/">Trellis 🌳</NextLink>
-              </Box>
+              <div style={{ display: "flex", gap: "1rem" }}>
+                <img src="/image2vector.svg" style={{ height: "2.2rem" }} alt="Trellis" />
+                <Box
+                  as={"span"}
+                  color={useColorModeValue(colors.darkGreen, colors.mossGreen)}
+                  position={"relative"}
+                  zIndex={10}
+                  _after={{
+                    content: '""',
+                    position: "absolute",
+                    left: 0,
+                    bottom: 0,
+                    w: "full",
+                    h: "30%",
+                    bg: useColorModeValue("green.100", "green.900"),
+                    zIndex: -1,
+                  }}
+                >
+
+                  <NextLink href="/" >
+                    <>
+                      Trellis
+                      {/* <Icon name="icon" /> */}
+                    </>
+                  </NextLink>
+                </Box>
+
+              </div>
             </Heading>
           </Flex>
           <Stack
@@ -120,10 +138,10 @@ export default function NavBar() {
                   fontSize={"md"}
                   fontWeight={600}
                   color={"white"}
-                  bg={"teal.400"}
+                  bg={"#3F7B5E"}
                   href={"#"}
                   _hover={{
-                    bg: "teal.300",
+                    bg: "#9CD49A",
                   }}
                   onClick={() => wallet.connect()}
                 >
@@ -139,7 +157,7 @@ export default function NavBar() {
             <DarkModeSwitch />
           </Flex>
         </Container>
-      </Flex>
-    </Box>
+      </Flex >
+    </Box >
   );
 }

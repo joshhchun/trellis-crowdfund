@@ -13,6 +13,14 @@ import {
 import { FaInstagram, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa";
 import NextLink from "next/link";
 
+
+const colors = {
+  darkGreen: "#3F8B5E",
+  mossGreen: "#9CD49A",
+  blue: "#4878A7",
+  lightBlue: "#6b94be",
+}
+
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
@@ -62,7 +70,7 @@ export default function Footer() {
         >
           <Box
             as={"span"}
-            color={useColorModeValue("teal.400", "teal.300")}
+            color={useColorModeValue(colors.darkGreen, colors.mossGreen)}
             position={"relative"}
             zIndex={10}
             _after={{
