@@ -72,11 +72,11 @@ export default function Footer() {
               bottom: 0,
               w: "full",
               h: "30%",
-              bg: useColorModeValue("teal.100", "teal.900"),
+              bg: useColorModeValue("green.100", "green.900"),
               zIndex: -1,
             }}
           >
-            <NextLink href="/">🤝BetterFund</NextLink>
+            <NextLink href="/">Trellis 🌳</NextLink>
           </Box>
         </Heading>
         <Stack direction={"row"} spacing={6}>

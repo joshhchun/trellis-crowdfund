@@ -35,8 +35,7 @@ import { FcShare, FcDonate, FcMoneyTransfer } from "react-icons/fc";
 
 export async function getServerSideProps(context) {
   const campaigns = await factory.methods.getDeployedCampaigns().call();
-
-  console.log(campaigns);
+  // console.log(campaigns);
 
   return {
     props: { campaigns },
@@ -227,7 +226,7 @@ export default function Home({ campaigns }) {
   return (
     <div>
       <Head>
-        <title>BetterFund</title>
+        <title>Trellis CrowdFund</title>
         <meta
           name="description"
           content="Transparent Crowdfunding in Blockchain"
@@ -236,7 +235,7 @@ export default function Home({ campaigns }) {
       </Head>
       <main className={styles.main}>
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
-          {" "}
+          {""}
           <Heading
             textAlign={useBreakpointValue({ base: "left" })}
             fontFamily={"heading"}
