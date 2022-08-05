@@ -91,19 +91,19 @@ export default function Footer() {
           <NextLink href="/">Home</NextLink>
           <Link
             href={
-              "https://github.com/harsh242/betterfund-crowdfunding-in-blockchain"
+              "https://github.com/joshhchun/trellis-crowdfund"
             }
             isExternal
           >
             Github
           </Link>
-          <Link href={"mailto:harshbadhai242@gmail.com"} isExternal>
+          <Link href={"mailto:mchishol@nd.edu"} isExternal>
             Contact
           </Link>
         </Stack>
       </Container>
 
-      <Box
+      {/* <Box
         borderTopWidth={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.700")}
@@ -140,7 +140,7 @@ export default function Footer() {
             </SocialButton>
           </Stack>
         </Container>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
